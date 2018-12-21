@@ -1,0 +1,42 @@
+apply plugin: 'maven'
+
+
+def getReleaseRepositoryUrl() {
+    return property('RELEASE_REPOSITORY_URL_PUBLIC')
+}
+
+def getSnapshotRepositoryUrl() {
+    return property('SNAPSHOT_REPOSITORY_URL_PUBLIC')
+}
+
+afterEvaluate { project ->
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: getReleaseRepositoryUrl()) {
+                    authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+                }
+
+                snapshotRepository(url: getSnapshotRepositoryUrl()) {
+                    authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+                }
+                pom.project {
+                    groupId "com.brightcns.android"
+                    artifactId "jsbridge"
+                    version "0.0.1-SNAPSHOT"
+                    packaging "aar"
+                }
+            }
+        }
+    }
+
+    //源代码
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.srcDirs
+    }
+
+    artifacts {
+        archives androidSourcesJar
+    }
+}
