@@ -26,6 +26,10 @@ public class BridgeWebViewClient extends WebViewClient {
             url = URLDecoder.decode(url, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         if (url.startsWith(BridgeUtil.YY_RETURN_DATA)) { // 如果是返回数据
@@ -35,7 +39,7 @@ public class BridgeWebViewClient extends WebViewClient {
             webView.flushMessageQueue();
             return true;
         } else {
-            return this.onCustomShouldOverrideUrlLoading(url)?true:super.shouldOverrideUrlLoading(view, url);
+            return this.onCustomShouldOverrideUrlLoading(url) || super.shouldOverrideUrlLoading(view, url);
         }
     }
 
@@ -49,6 +53,10 @@ public class BridgeWebViewClient extends WebViewClient {
                 url = URLDecoder.decode(url, "UTF-8");
             } catch (UnsupportedEncodingException ex) {
                 ex.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
             if (url.startsWith(BridgeUtil.YY_RETURN_DATA)) { // 如果是返回数据
                 webView.handlerReturnData(url);
@@ -57,7 +65,7 @@ public class BridgeWebViewClient extends WebViewClient {
                 webView.flushMessageQueue();
                 return true;
             } else {
-                return this.onCustomShouldOverrideUrlLoading(url)?true:super.shouldOverrideUrlLoading(view, request);
+                return this.onCustomShouldOverrideUrlLoading(url) || super.shouldOverrideUrlLoading(view, request);
             }
         }else {
             return super.shouldOverrideUrlLoading(view, request);
@@ -86,8 +94,7 @@ public class BridgeWebViewClient extends WebViewClient {
         }
 
         //
-        onCustomPageFinishd(view,url);
-
+        onCustomPageFinished(view,url);
     }
 
 
@@ -96,11 +103,7 @@ public class BridgeWebViewClient extends WebViewClient {
     }
 
 
-    protected void onCustomPageFinishd(WebView view, String url){
+    protected void onCustomPageFinished(WebView view, String url){
 
     }
-
-
-
-
 }

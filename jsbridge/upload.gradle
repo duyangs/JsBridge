@@ -23,7 +23,7 @@ afterEvaluate { project ->
                 pom.project {
                     groupId "com.brightcns.android"
                     artifactId "jsbridge"
-                    version "0.0.1-SNAPSHOT"
+                    version "0.0.2-SNAPSHOT"
                     packaging "aar"
                 }
             }
