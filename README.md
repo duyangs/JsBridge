@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.duyangs:jsbridge:1.0.0'
+    compile 'com.github.duyangs:JsBridge:1.0.0'
 }
 ```
 
