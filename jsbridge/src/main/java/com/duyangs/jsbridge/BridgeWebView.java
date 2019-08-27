@@ -1,14 +1,12 @@
-package com.brightcns.jsbridge;
+package com.duyangs.jsbridge;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
 import java.net.URLEncoder;

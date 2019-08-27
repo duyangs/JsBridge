@@ -1,4 +1,4 @@
-package com.brightcns.sample;
+package com.duyangs.sample;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,10 +11,10 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
-import com.brightcns.jsbridge.BridgeHandler;
-import com.brightcns.jsbridge.BridgeWebView;
-import com.brightcns.jsbridge.CallBackFunction;
-import com.brightcns.jsbridge.DefaultHandler;
+import com.duyangs.jsbridge.BridgeHandler;
+import com.duyangs.jsbridge.BridgeWebView;
+import com.duyangs.jsbridge.CallBackFunction;
+import com.duyangs.jsbridge.DefaultHandler;
 import com.google.gson.Gson;
 
 public class MainActivity extends Activity implements OnClickListener {

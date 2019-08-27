@@ -1,4 +1,4 @@
-package com.brightcns.sample
+package com.duyangs.sample
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

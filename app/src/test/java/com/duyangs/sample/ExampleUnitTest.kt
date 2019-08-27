@@ -1,4 +1,4 @@
-package com.brightcns.sample
+package com.duyangs.sample
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.brightcns.jsbridge;
+package com.duyangs.jsbridge;
 
 import android.graphics.Bitmap;
 import android.os.Build;

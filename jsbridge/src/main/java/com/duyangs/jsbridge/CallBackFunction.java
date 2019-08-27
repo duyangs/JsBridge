@@ -1,4 +1,4 @@
-package com.brightcns.jsbridge;
+package com.duyangs.jsbridge;
 
 public interface CallBackFunction {
 	
